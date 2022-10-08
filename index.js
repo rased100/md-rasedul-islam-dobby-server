@@ -19,18 +19,6 @@ async function run() {
         const userCollection = client.db("dobby_ads").collection("user");
         const galleryCollection = client.db("dobby_ads").collection("gallery");
 
-        app.get('/user', async (req, res) => {
-            const query = {};
-            const cursor = userCollection.find(query);
-            const users = await cursor.toArray();
-            res.send(users);
-        })
-        app.get('/galleryy', async (req, res) => {
-            const query = {};
-            const cursor = galleryCollection.find(query);
-            const users = await cursor.toArray();
-            res.send(users);
-        })
 
         app.post('/gallery', async (req, res) => {
             const gallery = req.body;
